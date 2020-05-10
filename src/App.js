@@ -1,9 +1,14 @@
 import React, { Component, Fragment } from 'react';
 
+import 'materialize-css/dist/css/materialize.min.css';
+
 import './App.css';
+import Header from './Header';
 import Tabela from './Tabela';
 import Formulario from './Formulario';
-import ContaClicks from './ReactHooks';
+// import ContaClicks from './ReactHooks';
+
+
 
 class App extends Component {
   state = {
@@ -53,9 +58,12 @@ class App extends Component {
   render() {
     return (
       <Fragment>
-        <Tabela autores={this.state.autores} removeAutor={this.removeAutor} />
-        <Formulario escutadorDeSubmit={this.escutadorDeSubmit} />
-        <ContaClicks />
+        <Header />
+        <div className="container mb-10">
+          <Tabela autores={this.state.autores} removeAutor={this.removeAutor} />
+          <Formulario escutadorDeSubmit={this.escutadorDeSubmit} />
+          {/* <ContaClicks /> */}
+        </div>
       </Fragment>
     );
   }
