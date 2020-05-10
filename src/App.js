@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 import './App.css';
 import Tabela from './Tabela';
+import ContaClicks from './ReactHooks';
 
 class App extends Component {
   state = {
@@ -48,6 +49,7 @@ class App extends Component {
     return (
       <div className="App">
         <Tabela autores={this.state.autores} removeAutor={this.removeAutor} />
+        <ContaClicks />
       </div>
     );
   }
