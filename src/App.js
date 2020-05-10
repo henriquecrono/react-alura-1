@@ -7,8 +7,7 @@ import Header from './Header';
 import Tabela from './Tabela';
 import Formulario from './Formulario';
 // import ContaClicks from './ReactHooks';
-
-
+import { Button, Container } from './StyledComponents';
 
 class App extends Component {
   state = {
@@ -63,6 +62,10 @@ class App extends Component {
           <Tabela autores={this.state.autores} removeAutor={this.removeAutor} />
           <Formulario escutadorDeSubmit={this.escutadorDeSubmit} />
           {/* <ContaClicks /> */}
+          {/* <Container>
+            <Button>Normal Button</Button>
+            <Button primary>Primary Button</Button>
+          </Container> */}
         </div>
       </Fragment>
     );
