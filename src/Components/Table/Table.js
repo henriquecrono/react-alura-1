@@ -15,15 +15,15 @@ const TableHead = () => {
 }
 
 const TableBody = props => {
-    const linhas = props.autores.map((obj, index) => {
+    const linhas = props.authors.map((obj) => {
         return (
-            <tr key={index}>
-                <td>{obj.nome}</td>
-                <td>{obj.livro}</td>
-                <td>{obj.preco}</td>
+            <tr key={obj.id}>
+                <td>{obj.name}</td>
+                <td>{obj.book}</td>
+                <td>{obj.price}</td>
                 <td>
                     <button
-                        onClick={() => { props.removeAutor(index) }}
+                        onClick={() => { props.removeAuthor(obj.id) }}
                         className="waves-effect waves-light indigo lighten-2 btn">
                         Remover
                     </button>
@@ -39,19 +39,19 @@ const TableBody = props => {
     );
 }
 
-class Tabela extends Component {
+class Table extends Component {
     render() {
-        const { autores, removeAutor } = this.props;
+        const { authors, removeAuthor } = this.props;
 
         return (
             <div className="App">
                 <table className="centered highlight">
                     <TableHead />
-                    <TableBody autores={autores} removeAutor={removeAutor} />
+                    <TableBody authors={authors} removeAuthor={removeAuthor} />
                 </table>
             </div>
         );
     }
 }
 
-export default Tabela;
+export default Table;
