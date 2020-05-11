@@ -5,7 +5,7 @@ import 'materialize-css/dist/css/materialize.min.css';
 import './Home.css';
 
 import Header from '../../Components/Header/Header';
-import Tabela from '../../Components/Table/Table';
+import HomeTable from '../../Components/HomeTable/HomeTable';
 import Form from '../../Components/Form/Form';
 
 import ApiService from '../../Utils/ApiService/ApiService';
@@ -62,7 +62,7 @@ class Home extends Component {
         <Header />
         <div className="container mb-10">
           <h1 className="center-align">Casa do Código</h1>
-          <Tabela authors={this.state.authors} removeAuthor={this.removeAuthor} />
+          <HomeTable authors={this.state.authors} removeAuthor={this.removeAuthor} />
           <Form submitListener={this.submitListener} />
           {/* <ContaClicks /> */}
           {/* <Container>
