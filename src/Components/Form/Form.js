@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
 
+import TextField from '@material-ui/core/TextField';
+import Grid from '@material-ui/core/Grid';
+import Button from '@material-ui/core/Button';
+
 import FormValidator from '../../Utils/FormValidator/FormValidator';
 import PopUp from '../../Utils/PopUp/PopUp';
 
@@ -39,7 +43,6 @@ class Form extends Component {
         this.state = this.stateInicial;
     }
 
-
     inputListener = event => {
         const { name, value } = event.target;
 
@@ -69,40 +72,48 @@ class Form extends Component {
         const { name, book, price } = this.state;
         return (
             <form className="validade">
-                <div className="row">
-                    <div className="input-field col s4">
-                        <label className="input-field" htmlFor="name">Nome</label>
-                        <input
-                            className="validate"
+                <Grid container spacing={2} alignItems="center">
+                    <Grid item>
+                        <TextField
+                            variant="outlined"
                             id="name"
-                            type="text"
                             name="name"
                             value={name}
-                            onChange={this.inputListener} />
-                    </div>
-                    <div className="input-field col s4">
-                        <label className="input-field" htmlFor="book">Livro</label>
-                        <input
-                            className="validate"
+                            label="Nome"
+                            onChange={this.inputListener}
+                        />
+                    </Grid>
+                    <Grid item>
+                        <TextField
+                            variant="outlined"
                             id="book"
-                            type="text"
                             name="book"
                             value={book}
-                            onChange={this.inputListener} />
-                    </div>
-                    <div className="input-field col s4">
-                        <label className="input-field col s4" htmlFor="price">Preço</label>
-                        <input
-                            className="validate"
+                            label="Livro"
+                            onChange={this.inputListener}
+                        />
+                    </Grid>
+                    <Grid item>
+                        <TextField
+                            variant="outlined"
                             id="price"
-                            type="text"
                             name="price"
                             value={price}
-                            onChange={this.inputListener} />
-                    </div>
-                </div>
-                <button onClick={this.submitForm} className="btn waves-effect waves-light indigo lighten-2" type="button">Salvar
-                </button>
+                            label="Preço"
+                            onChange={this.inputListener}
+                        />
+                    </Grid>
+                    <Grid item>
+                        <Button
+                            variant='contained'
+                            color="primary"
+                            onClick={this.submitForm}
+                            type="button"
+                        >
+                            Salvar
+                        </Button>
+                    </Grid>
+                </Grid>
             </form>
         );
     }
