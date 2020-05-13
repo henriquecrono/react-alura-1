@@ -5,7 +5,7 @@ import 'materialize-css/dist/css/materialize.min.css';
 import './Home.css';
 
 import Header from '../../Components/Header/Header';
-import HomeTable from '../../Components/HomeTable/HomeTable';
+import Table from '../../Components/Table/Table';
 import Form from '../../Components/Form/Form';
 
 import ApiService from '../../Utils/ApiService/ApiService';
@@ -57,12 +57,22 @@ class Home extends Component {
   }
 
   render() {
+    const fields = [
+      { title: 'Autores', field: 'name' },
+      { title: 'Livros', field: 'book' },
+      { title: 'Preços', field: 'price' },
+    ];
+
     return (
       <Fragment>
         <Header />
         <div className="container mb-10">
           <h1 className="center-align">Casa do Código</h1>
-          <HomeTable authors={this.state.authors} removeAuthor={this.removeAuthor} />
+          <Table
+            fields={fields}
+            data={this.state.authors}
+            removeData={this.removeAuthor}
+          />
           <Form submitListener={this.submitListener} />
           {/* <ContaClicks /> */}
           {/* <Container>
