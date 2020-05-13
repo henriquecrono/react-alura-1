@@ -7,6 +7,7 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Button from '@material-ui/core/Button';
 
+
 const DeleteCell = ({ removeData, id }) => {
     if (!removeData) {
         return null;

@@ -1,10 +1,11 @@
 import React, { Component, Fragment } from 'react';
 
 import Header from '../../Components/Header/Header';
-import DataTable from '../../Components/DataTable/DataTable';
+import Table from '../../Components/Table/Table';
 
 import ApiService from '../../Utils/ApiService/ApiService';
 import PopUp from '../../Utils/PopUp/PopUp';
+
 
 class Authors extends Component {
   constructor(props) {
@@ -12,7 +13,6 @@ class Authors extends Component {
 
     this.state = {
       names: [],
-      title: 'Autores'
     };
   }
 
@@ -29,12 +29,19 @@ class Authors extends Component {
   }
 
   render() {
+    const fields = [
+      { title: 'Autores', field: 'name' },
+    ];
+
     return (
       <Fragment>
         <Header />
         <div className="container">
           <h1 className="center-align">Página de Autores</h1>
-          <DataTable data={this.state.names} title={this.state.title} columns={['name']} />
+          <Table
+            fields={fields}
+            data={this.state.names}
+          />
         </div>
       </Fragment>
     );
