@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 
 import 'materialize-css/dist/css/materialize.min.css';
 
@@ -65,23 +65,23 @@ class Home extends Component {
     ];
 
     return (
-      <Fragment>
+      <>
         <Header />
         <div className="container mb-10">
           <h1 className="center-align">Casa do Código</h1>
+          <Form submitListener={this.submitListener} />
           <Table
             fields={fields}
             data={this.state.authors}
             removeData={this.removeAuthor}
           />
-          <Form submitListener={this.submitListener} />
           {/* <ContaClicks /> */}
           {/* <Container>
             <Button>Normal Button</Button>
             <Button primary>Primary Button</Button>
           </Container> */}
         </div>
-      </Fragment>
+      </>
     );
   }
 }

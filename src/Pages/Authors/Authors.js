@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 
 import Header from '../../Components/Header/Header';
 import Table from '../../Components/Table/Table';
@@ -34,7 +34,7 @@ class Authors extends Component {
     ];
 
     return (
-      <Fragment>
+      <>
         <Header />
         <div className="container">
           <h1 className="center-align">Página de Autores</h1>
@@ -43,7 +43,7 @@ class Authors extends Component {
             data={this.state.names}
           />
         </div>
-      </Fragment>
+      </>
     );
   }
 }

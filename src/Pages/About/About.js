@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 
 import Container from '@material-ui/core/Container';
 import Typography from '@material-ui/core/Typography';
@@ -18,7 +18,7 @@ const About = () => {
     const classes = useStyles();
 
     return (
-        <Fragment>
+        <>
             <Header />
             <Container maxWidth="sm">
                 <Typography className={classes.title} variant="h1" component="h2">
@@ -28,7 +28,7 @@ const About = () => {
                     A Casa do Código faz e edita livros.
                 </Typography>
             </Container>
-        </Fragment>
+        </>
     );
 
 }
